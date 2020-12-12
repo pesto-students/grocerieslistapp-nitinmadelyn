@@ -4,6 +4,7 @@ function authentication(){
   if(typeof(user) === "undefined" || user == null){
     location.href = "index.html"
   } else {
+    innerHtml("loggedInUsername", user);
     listItems();
   }
 }
