@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Groceries List App">
+    <meta name="author" content="Nitin Muchhadiya">
+    <title>Groceries List App - Login</title>
+    <!-- Custom styles for this template -->
+    <link href="./src/floating-labels.css" rel="stylesheet">
+    <link href="./src/style.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="./src/bootstrap.min.css" rel="stylesheet" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!-- Favicons -->
+    <link rel="icon" href="https://learn.pesto.tech/favicon.png">
+    <meta name="theme-color" content="#563d7c">
+    
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <form class="form-signin" onsubmit="return authentication();" autocomplete="off">
+  <div class="text-center mb-4">
+    <h1 class="h3 mb-3 font-weight-normal">Groceries List App</h1>
+  </div>
+
+  <div id="warningMessage" class="alert alert-warning hide" role="alert">
+    
+  </div>
+  
+  <div class="form-label-group">
+    <input type="text" name="username" id="username" class="form-control" placeholder="Email / Phone Number" required="" oninvalid="this.setCustomValidity('Username required.')" oninput="this.setCustomValidity('')" autofocus="true">
+    <label for="inputEmail">Username</label>
+  </div>
+
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+</form>
+
+<!-- The Modal for signup -->
+<div class="modal" id="addPassword">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form action="javascript: void(0);" onsubmit="return addPassword();">
+          <div class="form-group">
+            <label for="password" id="passwordLabel">Want to add password?</label>
+            <input type="password" class="form-control" placeholder="" id="password">
+          </div>
+          <button type="submit" id="submitAddPassword" class="btn btn-primary" >Add</button>
+          <button type="submit" id="submitSkipPassword" class="btn btn-primary" >Skip</button>
+          </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- The Modal for login -->
+<div class="modal" id="checkPassword">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form action="javascript: void(0);" onsubmit="return checkPassword();">
+          <div class="form-group">
+            <label for="password" id="passwordLabel">Enter your password</label>
+            <input type="password" class="form-control" placeholder="" id="chkpassword">
+          </div>
+          <button type="submit" id="loginWithPassword" class="btn btn-primary" >Enter</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="./src/config.js"></script>
+<script src="./src/index.js"></script>
+</body>
+</html>

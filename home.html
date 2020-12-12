@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Groceries List App">
+    <meta name="author" content="Nitin Muchhadiya">
+    <title>Groceries List App - Dashboard</title>
+    <!-- Custom styles for this template -->
+    <link href="./src/floating-labels.css" rel="stylesheet">
+    <link href="./src/style.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="./src/bootstrap.min.css" rel="stylesheet" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!-- Favicons -->
+    <link rel="icon" href="https://learn.pesto.tech/favicon.png">
+    <meta name="theme-color" content="#563d7c">
+  </head>
+  <body onload="authentication()">
+  <div class="container main-container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8 title-padding">
+
+        <div class="row">
+          <div class="col-md-9">Welcome Nitin!</div>
+          <div class="col-md-3"><a href="javascript: void(0);" onclick="logout();">Logout</a></div>
+        </div>
+        <br>
+        <form class="form-signin" onsubmit="return addItem();">
+          <div class="form-label-group">
+            <div class="row">
+              <div class="col-md-9 small-font"><textarea class="form-control" id="itemName" placeholder="Add Item"></textarea><p><span id="remainingCount">5</span> item(s) remaining</p></div>
+              <div class="col-md-3"><button class="form-control margin-10px">+</button></div>
+            </div>
+          </div>
+        </form>
+        <br>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Item Name</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody id="allItems">
+            <tr>
+              <th scope="row"></th>
+              <td colspan="2">No Items.</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+
+<!-- The Modal for edit -->
+<div class="modal" id="editItem">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form action="javascript: void(0);" onsubmit="return editItem();">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="" id="updateItemName">
+          </div>
+          <input type="hidden" id="oldItemName">
+          <button type="submit" id="updateItem" class="btn btn-primary" >Update</button>
+          <button type="button" id="updateItem" class="btn btn-primary" onclick="hideShowPopup(`hide`, `editItem`);">Cancel</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+  </body>
+<script src="./src/config.js"></script>
+<script src="./src/home.js"></script>
+</body>
+</html>
