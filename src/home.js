@@ -52,10 +52,13 @@ function addItem(){
     if(userFound === false){
       items.push({username: username, items: [itemName]});
       setLocalValue('items', JSON.stringify(items));
-      return true;
+      listItems();
+      return false;
     }
     setLocalValue('items', JSON.stringify(items));
-    return true;
+    setFieldValueById("itemName","");
+    listItems();
+    return false;
   } else {
     throwError("Invalid items.")
   }
